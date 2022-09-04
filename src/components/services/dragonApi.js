@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = 'https://api.spacexdata.com/v4/dragons/5e9d058759b1ff74a7ad5f8f';
+const BASE_URL_1 = 'https://api.spacexdata.com/v4/dragons/5e9d058759b1ff74a7ad5f8f';
 
 export default async function fetchDragonData(){
     try{
-      const response = await axios.get(BASE_URL);
+      const response = await axios.get(BASE_URL_1);
       return response.data;
 
     } catch(error){
@@ -12,7 +12,7 @@ export default async function fetchDragonData(){
     }
 }
 
-// export async function fetchDragonData(){
-//     const response = await axios.get(BASE_URL);
-//     return response.data;
-// }
+
+
+
+const BASE_URL_2 = 'https://api.spacexdata.com/v4/dragons';

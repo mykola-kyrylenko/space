@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react';
-import fetchDragonData from './services/dragonApi';
-import SwiperInfiniteLoop from './Swiper/Swiper';
+import fetchDragonData from '../../services/dragonApi';
+import SwiperInfiniteLoop from '../../Swiper/Swiper';
 
 function MainDragon() {
     const [id, setId] = useState('');
