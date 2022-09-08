@@ -27,11 +27,11 @@ const DragonsListPage = () => {
             name={item.name}
             image={item.mainImage}
             description={item.description}
-            wikipedia={item.wikipediaLink}
-            height_w_trunk={item.heightWithTank}
-            launch_payload_mass={item.launchPayloadMass}
-            first_flight={item.firstFlight}
-            flickr_images={item.images}
+            wikipedia={item.wikipedia}
+            height_w_trunk={item.height_w_trunk.meters}
+            launch_payload_mass={item.launch_payload_mass.kg}
+            first_flight={item.first_flight}
+            flickr_images={item.flickr_images}
           />
         )}
 

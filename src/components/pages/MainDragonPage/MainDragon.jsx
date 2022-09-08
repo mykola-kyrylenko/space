@@ -5,7 +5,7 @@ import Dragon from 'components/Dragon';
 function MainDragon() {
     const [id, setId] = useState('');
     const [name, setName] = useState('');
-    const [mainImage, setMainImage] = useState('');
+    // const [mainImage, setMainImage] = useState('');
     const [description, setDescription] = useState('');
     const [wikipediaLink, setWikipediaLink] = useState('');
     const [heightWithTank, setHeightWithTank] = useState('');
@@ -20,7 +20,7 @@ function MainDragon() {
 
           setId(response.id);
           setName(response.name);
-          setMainImage(response.flickr_images[0]);
+          // setMainImage(response.flickr_images[0]);
           setDescription(response.description);
           setWikipediaLink(response.wikipedia);
           setHeightWithTank(response.height_w_trunk.meters);
@@ -35,9 +35,9 @@ function MainDragon() {
   return (
     <ul>
         <Dragon
-            k={id}
+            id={id}
             name={name}
-            image={mainImage}
+            image={images[0]}
             description={description}
             wikipedia={wikipediaLink}
             height_w_trunk={heightWithTank}
