@@ -1,25 +1,15 @@
-import {React, useState, useEffect} from 'react';
+import {React} from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./swiper.css";
 import { Pagination, Navigation, Keyboard } from "swiper";
-import fetchDragonData from '../services/dragonApi';
+// import fetchDragonData from '../services/dragonApi';
 import { v4 as uuidv4 } from 'uuid';
 
 
-function SwiperInfiniteLoop() {
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        fetchDragonData()
-        .then((response)=>{
-            setImages(response.flickr_images);
-        })
-
-    }, [])
-
+function SwiperInfiniteLoop({flickr_images}) {
 
   return (
     <>
@@ -35,7 +25,7 @@ function SwiperInfiniteLoop() {
       modules={[Pagination, Navigation, Keyboard]}
       className="mySwiper"
     >
-        {images.map((item)=>{
+        {flickr_images.map((item)=>{
             return <SwiperSlide key={uuidv4()}><img src={item} alt="space shuttle"/></SwiperSlide>
         })}
     </Swiper>
