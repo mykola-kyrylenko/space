@@ -1,7 +1,7 @@
 import {React, useEffect, useState} from 'react';
 import SwiperInfiniteLoop from './Swiper/Swiper';
 
-const Dragon = ({k, name, image, description, wikipedia, height_w_trunk, launch_payload_mass, first_flight, flickr_images}) => {
+const Dragon = ({key, name, image, description, wikipedia, height_w_trunk, launch_payload_mass, first_flight, flickr_images}) => {
     // description={data.description}
     // wikipedia={data.wikipedia}
     // height_w_trunk={data.height_w_trunk.meters}
@@ -11,7 +11,7 @@ const Dragon = ({k, name, image, description, wikipedia, height_w_trunk, launch_
 
   return (
     <>
-        <li key={k}>
+        <li key={key}>
             <div>
                 <h1>{name}</h1>
                 <img src={image} alt="Space Rocket" width={600}/>
@@ -42,12 +42,3 @@ const Dragon = ({k, name, image, description, wikipedia, height_w_trunk, launch_
 }
 
 export default Dragon;
-
-// id={data.id}
-// name={data.name}
-// image={data.flickr_images[0]}
-// description={data.description}
-// wikipedia={data.wikipedia}
-// height_w_trunk={data.height_w_trunk.meters}
-// launch_payload_mass={data.launch_payload_mass.kg}
-// first_flight={data.first_flight}
