@@ -1,42 +1,51 @@
 import {React, useEffect, useState} from 'react';
+import { lazy, Suspense } from "react";
 import fetchSpaceXData from '../../services/spaceX-Api';
-import Dragon from '../../Dragon';
+import { NavLink, Outlet } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
 
 const DragonsListPage = () => {
   const [dragons, setDragons] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); 
 
   useEffect(() => {
+    setIsLoading(true);
     fetchSpaceXData()
     .then((response)=>setDragons(response))
-
+    .catch((error)=>{
+      setIsLoading(false);
+      return console.log(error);
+    })
+    
+    setIsLoading(false);
   }, []);
-
-  console.log(dragons);
 
 
 
   return (
     <div>
-      <ul>
-        {/* {dragons.map((item)=>{
-          return <li key={item.id}><a href="">{item.name}</a></li>
-        })} */}
+      <aside>
+        <h3>Shuttles</h3>
+        {isLoading ? <Loader/> : dragons && (
+          <ul>
 
-        {dragons.map((item)=><Dragon
-            key={item.id}
-            name={item.name}
-            image={item.mainImage}
-            description={item.description}
-            wikipedia={item.wikipedia}
-            height_w_trunk={item.height_w_trunk.meters}
-            launch_payload_mass={item.launch_payload_mass.kg}
-            first_flight={item.first_flight}
-            flickr_images={item.flickr_images}
-          />
+            {dragons.map((dragon)=>(
+              <li key={dragon.id}>
+                <NavLink to={`${dragon.id}`}>
+                  {dragon.name}
+                </NavLink>
+              </li>
+            ))}
+
+          </ul>
         )}
 
-      </ul>
+      </aside>
+        <Suspense fallback={<div>Loading page...</div>}>
+          <Outlet/>
+        </Suspense>
     </div>
+
   )
 }
 
