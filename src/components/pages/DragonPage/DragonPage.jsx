@@ -3,7 +3,6 @@ import { useParams} from "react-router-dom";
 import Dragon from '../../Dragon/Dragon';
 import fetchSpaceXData from '../../services/spaceX-Api';
 import Loader from 'components/Loader/Loader';
-// import {Container} from './DragonPage.styled';
 
 function DragonPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +10,6 @@ function DragonPage() {
   const {dragonId} = useParams();
   const [dragon, setDragon] = useState([]);
 
-  // const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [wikipedia, setWikipediaLink] = useState('');

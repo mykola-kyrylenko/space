@@ -1,8 +1,8 @@
 import {React, useEffect, useState} from 'react';
 import { lazy, Suspense } from "react";
 import fetchSpaceXData from '../../services/spaceX-Api';
-import { NavLink, Outlet } from 'react-router-dom';
-import {Header, List, NavL} from './DragonListPage.styled';
+import {Outlet } from 'react-router-dom';
+import { List, NavL} from './DragonListPage.styled';
 
 const Loader = lazy(()=> import('../../Loader/Loader'));
 

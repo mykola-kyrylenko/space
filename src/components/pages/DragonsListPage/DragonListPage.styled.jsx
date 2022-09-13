@@ -14,9 +14,7 @@ const NavL = styled(NavLink)`
     }
 
     @media screen and (min-width: 480px){
-        /* height: 80px; */
         font-size: 18px;
-        
     }
 
     @media screen and (min-width: 768px){
@@ -36,13 +34,8 @@ const List = styled.ul`
         margin: 0 auto;
         width: 50%;
         justify-content: space-around;
-
-    }
-
-
-    
+    } 
 `
-
 
 export {
     List,

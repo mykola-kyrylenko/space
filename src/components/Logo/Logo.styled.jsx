@@ -5,9 +5,7 @@ const LogoX = styled(SpaceXLogo)`
 
     @media screen and (min-width: 1280px){
         width: 300px;
-        
-    }
-        
+    }       
 `;
 
 export {

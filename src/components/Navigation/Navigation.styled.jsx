@@ -13,7 +13,6 @@ const Container = styled.nav`
 
     @media screen and (min-width: 480px){
         height: 80px;
-
     }
 
     /* @media screen and (min-width: 768px){
@@ -33,7 +32,6 @@ const NavBtn = styled.div`
         display: flex;
         justify-content: space-between;
         font-size: 12px;
-        
     }
 
     @media screen and (min-width: 768px){
@@ -60,9 +58,7 @@ const NavL = styled(NavLink)`
     }
 
     @media screen and (min-width: 480px){
-
         font-size: 18px;
-        
     }
 
     @media screen and (min-width: 768px){
@@ -73,9 +69,6 @@ const NavL = styled(NavLink)`
         width: 20%;
         margin: 50px
     }
-
-
-
 `;
 
 export {

@@ -19,7 +19,7 @@ const Dragon = ({ name, description, wikipedia, height_w_trunk, launch_payload_m
             <div>
                 <p>{description}</p>
                 <hr />
-                <a href={wikipedia}>Wikipedia</a>
+                    <a href={wikipedia}>Wikipedia</a>
                 <hr/>
             </div>
 

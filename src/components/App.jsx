@@ -3,12 +3,6 @@ import "normalize.css";
 import {Routes, Route} from 'react-router-dom';
 import { lazy } from "react";
 
-// import MainDragon from './pages/MainDragonPage/MainDragon';
-// import Layout from './Layout/Layout';
-// import DragonsListPage from './pages/DragonsListPage/DragonsListPage';
-// import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-// import DragonPage from './pages/DragonPage/DragonPage';
-
 const MainDragon = lazy(()=> import('./pages/MainDragonPage/MainDragon'));
 const Layout = lazy(()=> import('./Layout/Layout'));
 const DragonsListPage = lazy(()=> import('./pages/DragonsListPage/DragonsListPage'));
