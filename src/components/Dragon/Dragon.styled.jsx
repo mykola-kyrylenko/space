@@ -7,6 +7,11 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     margin: 0 50px 100px;
+
+    @media screen and (min-width: 1280px){
+        margin: 0 auto;
+        width: 1280px;
+    } 
 `;
 
 export {

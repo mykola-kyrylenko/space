@@ -49,7 +49,7 @@ function DragonPage() {
 
 
   return (
-    <div>
+    <div >
         {isLoading ? <Loader/> : dragonId 
         &&         
         <Dragon

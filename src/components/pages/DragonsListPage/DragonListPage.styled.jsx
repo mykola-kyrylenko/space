@@ -32,7 +32,7 @@ const List = styled.ul`
     @media screen and (min-width: 1280px){
         padding: 50px 0 50px;
         margin: 0 auto;
-        width: 50%;
+        width: 30%;
         justify-content: space-around;
     } 
 `

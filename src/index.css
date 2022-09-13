@@ -21,6 +21,7 @@ code {
 
 a {
   text-decoration: none;
+  color: #0260da;
 }
 
 li, ul{
@@ -33,4 +34,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+span{
+  color: #0260da;
 }
