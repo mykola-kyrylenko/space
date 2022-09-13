@@ -1,7 +1,10 @@
 import {React, useEffect, useState} from 'react';
 import fetchDragonData from '../../services/dragonApi';
-import Dragon from '../../Dragon/Dragon';
-import Loader from 'components/Loader/Loader';
+import { lazy, Suspense } from "react";
+import {Container} from './MainDragon.styled';
+
+const Dragon = lazy(()=> import('../../Dragon/Dragon'));
+const Loader = lazy(()=> import('../../Loader/Loader'));
 
 function MainDragon() {
     const [id, setId] = useState('');
@@ -41,7 +44,7 @@ function MainDragon() {
 
 
   return (
-    <div>
+    <Container>
         {isLoading ? <Loader/> : <Dragon
               key={id}
               name={name}
@@ -53,7 +56,12 @@ function MainDragon() {
               flickr_images={images}
           />}
 
-    </div>
+          
+        <Suspense fallback={<div>Loading page...</div>}>
+
+        </Suspense>
+
+    </Container>
 
   )
 }

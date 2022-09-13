@@ -5,7 +5,7 @@ function Loader() {
   return (
     <div>
         <TailSpin
-            color="#00BFFF" 
+            color="#0260da" 
             height={80} 
             width={80}
         />

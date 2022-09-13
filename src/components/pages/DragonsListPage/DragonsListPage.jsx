@@ -2,7 +2,10 @@ import {React, useEffect, useState} from 'react';
 import { lazy, Suspense } from "react";
 import fetchSpaceXData from '../../services/spaceX-Api';
 import { NavLink, Outlet } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
+import {Header, List, NavL} from './DragonListPage.styled';
+
+const Loader = lazy(()=> import('../../Loader/Loader'));
+
 
 const DragonsListPage = () => {
   const [dragons, setDragons] = useState([]);
@@ -24,26 +27,31 @@ const DragonsListPage = () => {
 
   return (
     <div>
-      <aside>
-        <h3>Shuttles</h3>
-        {isLoading ? <Loader/> : dragons && (
-          <ul>
 
-            {dragons.map((dragon)=>(
-              <li key={dragon.id}>
-                <NavLink to={`${dragon.id}`}>
-                  {dragon.name}
-                </NavLink>
-              </li>
-            ))}
+          <div>
+            {isLoading ? <Loader/> : dragons && (
+              <List>
 
-          </ul>
-        )}
+                {dragons.map((dragon)=>(
+                  <li key={dragon.id}>
+                    <NavL to={`${dragon.id}`}>
+                      {dragon.name}
+                    </NavL>
+                  </li>
+                ))}
 
-      </aside>
-        <Suspense fallback={<div>Loading page...</div>}>
-          <Outlet/>
-        </Suspense>
+              </List>
+            )}
+
+          </div>
+        
+        <div>
+          <Suspense fallback={<div>Loading page...</div>}>
+            <Outlet/>
+          </Suspense>
+        </div>
+
+
     </div>
 
   )

@@ -1,11 +1,20 @@
 import { NavLink } from 'react-router-dom';
+import Logo from 'components/Logo/Logo';
+import {Container, NavBtn, NavL} from './Navigation.styled';
 
 const Navigation = () => {
   return (
-    <nav>
-        <NavLink to="/">Dragon 1</NavLink>
-        <NavLink to="dragons-list">Shuttle List</NavLink>
-    </nav>
+    <Container>
+        <div>
+          <NavLink to="/"><Logo/></NavLink>
+        </div>
+
+        <NavBtn>
+          <NavL to="/">Dragon</NavL>
+          <NavL to="dragons-list">Shuttles</NavL>
+        </NavBtn>
+
+    </Container>
   )
 }
 

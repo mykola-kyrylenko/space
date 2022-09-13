@@ -1,11 +1,12 @@
 import {React} from 'react';
 import SwiperInfiniteLoop from '../Swiper/Swiper';
+import {Container} from './Dragon.styled';
 
 const Dragon = ({ name, description, wikipedia, height_w_trunk, launch_payload_mass, first_flight, flickr_images}) => {
 
   return (
 
-        <div>
+        <Container>
             <div>
                 {flickr_images && <SwiperInfiniteLoop flickr_images={flickr_images}/>}
             </div>
@@ -17,18 +18,20 @@ const Dragon = ({ name, description, wikipedia, height_w_trunk, launch_payload_m
 
             <div>
                 <p>{description}</p>
+                <hr />
                 <a href={wikipedia}>Wikipedia</a>
+                <hr/>
             </div>
 
             <div>
-                <h5>Basic characteristics</h5>
+                <h4>Basic characteristics:</h4>
                 <ul>
                     <li>Height with trunk: <span>{height_w_trunk} meters</span></li>
                     <li>Launch payload mass: <span>{launch_payload_mass} kg</span></li>
                     <li>First Flight: <span>{first_flight}</span></li>
                 </ul>
             </div>
-        </div>
+        </Container>
 
   )
 }
